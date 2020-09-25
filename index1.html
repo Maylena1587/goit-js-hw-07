@@ -9,7 +9,7 @@
   </head>
   <body>
     <!--Task1-->
-    <!--<ul id="categories">
+    <ul id="categories">
       <li class="item">
         <h2>Животные</h2>
 
@@ -40,10 +40,10 @@
           <li>Node</li>
         </ul>
       </li>
-    </ul>-->
+    </ul>
 
     <!--Task2-->
-    <!--<ul id="ingredients"></ul>-->
+    <ul id="ingredients"></ul>
     <!--Task3-->
     <ul id="gallery"></ul>
     <!--Task4-->
@@ -67,7 +67,14 @@
     <br />
     <span id="text">Абракадабра!</span>
     <!--Task8-->
-    <script src="./js/script5.js" type="module"></script>
+    <div id="controls">
+      <input type="number" min="0" max="100" step="1" />
+      <button type="button" data-action="render">Создать</button>
+      <button type="button" data-action="destroy">Очистить</button>
+    </div>
+
+    <div id="boxes"></div>
+    <script src="./js/script8.js" type="module"></script>
     <!-- <script src="./js/script2.js" type="module"></script> -->
     <!--<script src="./js/script3.js" type="module"></script>-->
     <!--<script src="./js/script4.js" type="module"></script>-->
