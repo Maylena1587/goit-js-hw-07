@@ -3,13 +3,23 @@
 
 // < input type = "text" placeholder = "Ваше имя?" id = "name-input" />
 //     <h1>Привет, <span id="name-output">незнакомец</span>!</h1>
+// const input = document.getElementById("name-input");
+// const nameOutput = document.getElementById("name-output");
+
+// input.oninput = function () {
+//   if (input.value === "") {
+//     nameOutput.innerHTML = "незнакомец";
+//   } else {
+//     nameOutput.innerHTML = input.value;
+//   }
+// };
 const input = document.getElementById("name-input");
 const nameOutput = document.getElementById("name-output");
-
-input.oninput = function () {
-  if (input.value === "") {
-    nameOutput.innerHTML = "незнакомец";
+function currentValueOutput(event) {
+  if (event.target.value === '') {
+    nameOutput.textContent = 'незнакомец';
   } else {
-    nameOutput.innerHTML = input.value;
+    nameOutput.textContent = event.target.value;
   }
 };
+input.addEventListener('input', currentValueOutput);

@@ -22,24 +22,38 @@
 // #validation - input.invalid {
 //     border - color: #f44336;
 // }
-let inputVal = document.getElementById("validation-input");
+// let inputVal = document.getElementById("validation-input");
 
-let totalLenght = inputVal.getAttribute("data-length");
-let intTotallenght = parseInt(totalLenght, 10);
+// let totalLenght = inputVal.getAttribute("data-length");
+// let intTotallenght = parseInt(totalLenght, 10);
 
-inputVal.oninput = function () {
-  if (inputVal.value.length === intTotallenght) {
-    inputVal.classList.remove("invalid");
-    inputVal.classList.add("valid");
-  }
-  if (inputVal.value.length === 0) {
-    inputVal.classList.remove("valid");
-    inputVal.classList.remove("invalid");
-  }
-  if (inputVal.value.length !== intTotallenght && inputVal.value.length !== 0) {
-    inputVal.classList.add("invalid");
-  }
-};
+// inputVal.oninput = function () {
+//   if (inputVal.value.length === intTotallenght) {
+//     inputVal.classList.remove("invalid");
+//     inputVal.classList.add("valid");
+//   }
+//   if (inputVal.value.length === 0) {
+//     inputVal.classList.remove("valid");
+//     inputVal.classList.remove("invalid");
+//   }
+//   if (inputVal.value.length !== intTotallenght && inputVal.value.length !== 0) {
+//     inputVal.classList.add("invalid");
+//   }
+// };
+// const inputEl = document.getElementById(`validation-input`);
+// inputEl.addEventListener(`input`, onBlurValidation);
+// function onBlurValidation(event) {
+//   if (
+//     event.currentTarget.value.length ===
+//     Number(event.currentTarget.dataset.length)
+//   ) {
+//     inputEl.classList = `valid`;
+//   } else if (event.currentTarget.value.length === 0) {
+//     inputEl.classList = ``;
+//   } else {
+//     inputEl.classList = `invalid`;
+//   }
+// }
 // const inputEl = document.getElementById("validation-input");
 // inputEl.addEventListener("blur", () => {
 //   if (inputEl.value.length === Number(inputEl.dataset.length)) {
@@ -50,3 +64,20 @@ inputVal.oninput = function () {
 //     inputEl.classList = "invalid";
 //   }
 // });
+const inputEl = document.getElementById('validation-input');
+
+function makeCheckValidation(event) {
+  if (event.target.value.length === Number(inputEl.dataset.length)) {
+    inputEl.classList.add('valid');
+    inputEl.classList.remove('invalid');
+  } else if (event.target.value.length !== 0 && event.target.value.length !== Number(inputEl.dataset.length)) {
+    inputEl.classList.add('invalid');
+    inputEl.classList.remove('valid');
+  }
+  else if (inputEl.value.length === 0) {
+    inputEl.classList.remove("valid");
+    inputEl.classList.remove("invalid");
+  }
+};
+
+inputEl.addEventListener('blur', makeCheckValidation);

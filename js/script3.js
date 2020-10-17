@@ -42,12 +42,17 @@ const images = [
     alt: "Group of Horses Running",
   },
 ];
+// const createGalleryItem = ({ url, alt }) =>
+//   `<li><img src="${url}" alt="${alt}"></li>`;
+// const galleryMarkup = images.reduce(
+//   (acc, item) => acc + createGalleryItem(item),
+//   ""
+// );
+// const galleryList = document.querySelector("#gallery");
+// galleryList.insertAdjacentHTML("afterbegin", galleryMarkup);
+// galleryList.setAttribute("style", "list-style: none; display: flex;");
+const galleryEl = document.querySelector('#gallery');
 const createGalleryItem = ({ url, alt }) =>
-  `<li><img src="${url}" alt="${alt}" width = 200 height = 150></li>`;
-const galleryMarkup = images.reduce(
-  (acc, item) => acc + createGalleryItem(item),
-  ""
-);
-const galleryList = document.querySelector("#gallery");
-galleryList.insertAdjacentHTML("afterbegin", galleryMarkup);
-galleryList.setAttribute("style", "list-style: none; display: flex;");
+  `<li><img class="image" src="${url}" alt="${alt}"></li>`;
+const galleryImages = images.map(createGalleryItem).join('');
+galleryEl.insertAdjacentHTML('beforeend', galleryImages);  

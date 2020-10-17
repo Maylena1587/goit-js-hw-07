@@ -43,13 +43,17 @@
 
 // Категория: Животные
 // Количество элементов: 4
-
+// const totalCategories = document.querySelectorAll(".item");
+// console.log(`В списке ${totalCategories.length} категории.`);
+// const categoriesEl = [...totalCategories]
+//   .map(
+//     (categories) => `Категория: ${categories.children[0].textContent}
+// Количество элементов: ${categories.children[1].children.length}`
+//   )
+//   .join("\n");
+// console.log(categoriesEl);
 const totalCategories = document.querySelectorAll(".item");
 console.log(`В списке ${totalCategories.length} категории.`);
-const categoriesEl = [...totalCategories]
-  .map(
-    (categories) => `Категория: ${categories.children[0].textContent}
-Количество элементов: ${categories.children[1].children.length}`
-  )
-  .join("\n");
-console.log(categoriesEl);
+totalCategories.forEach(item =>
+  console.log(`Категория: ${item.querySelector('h2').textContent}
+Количество элементов: ${item.querySelectorAll('li').length} `));
