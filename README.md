@@ -1,1 +1,1 @@
-# tasks-7.1-homework
+#  goit-js-hw-07
