@@ -31,9 +31,9 @@ function getAmount() {
 function createBoxes(amount) {
   let basicSize = 30;
   const fragment = document.createDocumentFragment();
-  for (let i = 0; i < amount; i++) {
+  for (let i = 0; i < amount; i += 1) {
     let size = basicSize + i * 10;
-    let div = document.createElement("div");
+    const div = document.createElement("div");
     div.style.cssText = `width: ${size}px; height: ${size}px; background-color: rgba( ${random()} , ${random()} , ${random()} )`;
     fragment.appendChild(div);
   }
